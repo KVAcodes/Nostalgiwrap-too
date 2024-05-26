@@ -2,13 +2,30 @@
 @font-face {
     font-family: 'NeonFont';
     src: url('../fonts/neon-webfont.woff') format('woff'),
-         url('../fonts/neon-webfont.woff2') format('woff2');
+        url('../fonts/neon-webfont.woff2') format('woff2');
 }
+
 /* Body */
 body {
     margin: 0;
     padding: 0;
 }
+
+/* Loading screen style */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
 /* Background_Animation */
 .video-container {
     position: fixed;
@@ -18,28 +35,33 @@ body {
     height: 100%;
     overflow: hidden;
 }
+
 video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 /* Retro-style navbar */
 .navbar-fixed {
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;   
+    z-index: 1000;
 }
+
 .navbar-fixed .navbar-brand {
     font-family: 'NeonFont', sans-serif;
     font-size: 18px;
     color: whitesmoke;
     text-shadow: 0 0 10px red, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF, 0 0 40px red;
 }
+
 .navbar-fixed .navbar-toggler-icon {
     background-color: #ff4c4c;
 }
+
 .navbar-fixed .navbar-nav .nav-link {
     font-family: 'NeonFont', sans-serif;
     font-size: 15px;
@@ -47,6 +69,7 @@ video {
     text-shadow: 0 0 10px #2b00ff, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF;
     transition: color 0.3s;
 }
+
 /* Change color on hover */
 .navbar-fixed .navbar-nav .nav-link:hover {
     color: #ff4c4c;
@@ -56,6 +79,7 @@ video {
 .navbar-fixed .navbar-nav .nav-link:active {
     color: #7DF9FF;
 }
+
 /* Bottom navbar */
 .navbar-bottom {
     position: fixed;
@@ -68,16 +92,23 @@ video {
     text-align: center;
     padding: 10px 0;
 }
-.navbar-bottom > a {
+
+.navbar-bottom>a {
     color: #fff;
     font: 10px 'NeonFont', sans-serif;
-    text-decoration: none; /* Remove underline */
-    padding: 0 15px; /* Add spacing between anchors */
-    transition: color 0.3s; /* Transition effects on hover (color) */
+    text-decoration: none;
+    /* Remove underline */
+    padding: 0 15px;
+    /* Add spacing between anchors */
+    transition: color 0.3s;
+    /* Transition effects on hover (color) */
 }
+
 .navbar-bottom a:hover {
-    color:  #ff4c4c; /* Change text color on hover */
+    color: #ff4c4c;
+    /* Change text color on hover */
 }
+
 /* Load the Pacifico font from a CDN (Content Delivery Network) */
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
@@ -92,18 +123,21 @@ video {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
-    height : 20%;
+    height: 20%;
     font-style: italic;
     font-family: 'Pacifico', 'NeonFont', sans-serif;
     font-size: 16px;
     color: whitesmoke;
 }
-.welcome-text > p {
+
+.welcome-text>p {
     color: #fff;
     padding: 20px;
     transform: rotateY(15deg) translateZ(15px);
-    text-shadow: 0 0 10px #2b00ff, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF; /* Create the glowing effect using text-shadow */ 
+    text-shadow: 0 0 10px #2b00ff, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF;
+    /* Create the glowing effect using text-shadow */
 }
+
 /* Login to Spotify button */
 .retro-button {
     font-family: 'NeonFont', sans-serif;
@@ -116,17 +150,20 @@ video {
     margin-left: 20px;
     transform: rotateY(-30deg) translateZ(15px);
 }
+
 .spotify-icon {
     width: 70px;
     height: auto;
     margin-left: 10px;
 }
+
 /* Footer */
 .footer {
     position: fixed;
     bottom: 50px;
     width: 50%;
-    height: 40px;;
+    height: 40px;
+    ;
     left: 50%;
     transform: translate(-50%, 0);
     font-family: 'NeonFont', sans-serif;
@@ -138,25 +175,31 @@ video {
     display: flex;
     align-items: center;
 }
+
 .footer-text {
     flex: 1;
 }
+
 .social-icons {
     flex: 1;
 }
+
 .social-icons a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
     font-size: 20px;
 }
+
 .social-icons a:hover {
     color: red;
 }
+
 .icon-img {
     width: 24px;
     height: 24px;
 }
+
 /* Style for modal */
 #on-arrival {
     position: absolute;
@@ -167,10 +210,11 @@ video {
     color: #fff;
     padding: 20px;
     text-shadow: 0 0 10px #2b00ff, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF;
-    font-family: 'Pacifico','NeonFont', sans-serif;
+    font-family: 'Pacifico', 'NeonFont', sans-serif;
     font-style: italic;
     font-size: 1.5vw;
 }
+
 .modal {
     display: none;
     position: fixed;
@@ -178,61 +222,92 @@ video {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Transparent background */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Transparent background */
     transition: 'all 2s ease-in-out';
 }
+
 .tv-screen {
     position: absolute;
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
-    width: 50%; /* Set the width to 80% of its parent container */
-    padding-top: 28.125%; /* Maintain a 16:9 aspect ratio (height = width * 9/16) */
+    width: 50%;
+    /* Set the width to 80% of its parent container */
+    padding-top: 28.125%;
+    /* Maintain a 16:9 aspect ratio (height = width * 9/16) */
     background: #46503E;
     border-top: 1px solid #444;
     border-bottom: 1px solid #444;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
+
 .vignette {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-	background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/crt.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;	
-	z-index: 10004;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/crt.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 10004;
 }
+
 .noise {
     /* display this div within the tv-screen div but not overlapping it's background image*/
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;	
-    background: 
-      repeating-radial-gradient(#000 0 0.0001%,#fff 0 0.0002%) 50% 0/2500px 2500px,
-      repeating-conic-gradient(#000 0 0.0001%,#fff 0 0.0002%) 60% 60%/2500px 2500px;
+    height: 100%;
+    background:
+        repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/2500px 2500px,
+        repeating-conic-gradient(#000 0 0.0001%, #fff 0 0.0002%) 60% 60%/2500px 2500px;
     background-blend-mode: difference;
     animation: b .2s infinite alternate;
     z-index: 9999;
 }
 
-@keyframes b{
-    100% {background-position: 50% 0, 60% 50%}
+@keyframes b {
+    100% {
+        background-position: 50% 0, 60% 50%
+    }
 }
+
 @keyframes shutdown {
-    0%        { opacity: 0; }
-    8%, 46%   { transform: scale(1, 1); opacity: 1; }
-    50%       { transform: scale(1, 0.02); opacity: 0.8; }
-    55%, 100% { transform: scale(0, 0); opacity: 0.3; }
+    0% {
+        opacity: 0;
+    }
+
+    8%,
+    46% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1, 0.02);
+        opacity: 0.8;
+    }
+
+    55%,
+    100% {
+        transform: scale(0, 0);
+        opacity: 0.3;
+    }
 }
+
 /* an animation for a div to fade away in 4s */
 @keyframes fadeOut {
-    0%   { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* main-page text */
@@ -246,7 +321,7 @@ video {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
-    height : 20%;
+    height: 20%;
     font-style: italic;
     font-family: 'Pacifico', 'NeonFont', sans-serif;
     font-size: 16px;
@@ -257,7 +332,8 @@ video {
     color: #fff;
     padding: 20px;
     transform: rotateY(15deg) translateZ(15px);
-    text-shadow: 0 0 10px #2b00ff, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF; /* Create the glowing effect using text-shadow */ 
+    text-shadow: 0 0 10px #2b00ff, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF;
+    /* Create the glowing effect using text-shadow */
 }
 
 #openModalButton {
@@ -271,7 +347,8 @@ video {
     right: 10px;
     font-size: 2vw;
     color: #fff;
-    text-shadow: 0 0 10px #2b00ff, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF; /* Create the glowing effect using text-shadow */
+    text-shadow: 0 0 10px #2b00ff, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF;
+    /* Create the glowing effect using text-shadow */
     cursor: pointer;
 }
 
@@ -282,7 +359,8 @@ video {
     left: 5%;
     font-size: 2vw;
     color: #fff;
-    text-shadow: 0 0 10px #2b00ff, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF; /* Create the glowing effect using text-shadow */
+    text-shadow: 0 0 10px #2b00ff, 0 0 20px #7DF9FF, 0 0 30px #7DF9FF;
+    /* Create the glowing effect using text-shadow */
     cursor: pointer;
     display: none;
 }
@@ -302,6 +380,7 @@ video {
     justify-content: space-evenly;
     align-items: center;
 }
+
 .button-title {
     font-family: 'NeonFont', sans-serif;
     font-size: 2vw;
@@ -310,7 +389,7 @@ video {
     text-shadow: 0 0 3px red, 0 0 5px #7DF9FF, 0 0 7px #7DF9FF, 0 0 10px red;
 }
 
-.button-section { 
+.button-section {
     display: flex;
     flex-direction: row;
     /* have each button spaced evenly */
@@ -318,6 +397,7 @@ video {
     justify-content: space-evenly;
 
 }
+
 .custom-button {
     font-family: 'NeonFont', sans-serif;
     font-size: 1.5vw;
@@ -327,16 +407,19 @@ video {
     border-radius: 4px;
     text-shadow: 0 0 3px red, 0 0 5px #7DF9FF, 0 0 7px #7DF9FF, 0 0 10px red;
     margin-left: 1vw;
-    transition: all 0.1s ease; /* Add a smooth transition effect */
+    transition: all 0.1s ease;
+    /* Add a smooth transition effect */
 }
+
 .selected {
     background-color: rgb(38, 61, 177);
 }
-  
+
 
 .custom-button:active {
-     /* Styling for the active (clicked) state */
-    transform: translateY(2px); /* Move the button down */
+    /* Styling for the active (clicked) state */
+    transform: translateY(2px);
+    /* Move the button down */
 }
 
 .controller-section {
@@ -348,6 +431,7 @@ video {
     transform: translateY(-50%);
     display: none;
 }
+
 .controller-section .top-half {
     /* takes the top half of the controller-section */
     height: 70%;
@@ -358,13 +442,15 @@ video {
     justify-content: center;
     opacity: 0.8;
 }
-.top-half > p {
+
+.top-half>p {
     font-family: 'NeonFont', sans-serif;
     font-size: 1.5vw;
     color: white;
     width: 100%;
     text-shadow: 0 0 3px red, 0 0 5px #7DF9FF, 0 0 7px #7DF9FF, 0 0 10px red;
 }
+
 .controller-section .bottom-half {
     /* takes the bottom half of the controller-section */
     height: 30%;
@@ -373,6 +459,7 @@ video {
     align-items: center;
     justify-content: center;
 }
+
 .controller-button {
     /* circular buttons */
     font-family: 'NeonFont', sans-serif;
@@ -390,7 +477,8 @@ video {
     justify-content: center;
     transition: all 0.1s ease;
 }
-.controller-button > p {
+
+.controller-button>p {
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -401,14 +489,17 @@ video {
 
 .controller-button.selected {
     background-color: rgb(38, 61, 177);
-    transform: translateY(0.3vw); /* Move the button down */
+    transform: translateY(0.3vw);
+    /* Move the button down */
 
 }
 
 .controller-button:active {
-     /* Styling for the active (clicked) state */
-    transform: translateY(0.5vw); /* Move the button down */
+    /* Styling for the active (clicked) state */
+    transform: translateY(0.5vw);
+    /* Move the button down */
 }
+
 #genre-recommend-playlist {
     font-family: 'NeonFont', sans-serif;
     font-size: 2vw;
@@ -419,13 +510,17 @@ video {
     text-shadow: 0 0 3px red, 0 0 5px #7DF9FF, 0 0 7px #7DF9FF, 0 0 10px red;
     transition: all 0.1s ease;
 }
+
 #genre-recommend-playlist:active {
-     /* Styling for the active (clicked) state */
-    transform: translateY(0.5vw); /* Move the button down */
+    /* Styling for the active (clicked) state */
+    transform: translateY(0.5vw);
+    /* Move the button down */
 }
+
 #genre-recommend-playlist:hover {
     background-color: rgb(38, 61, 177);
 }
+
 #genre-recommend-playlist.selected {
     background-color: rgb(38, 61, 177);
 }
@@ -440,46 +535,55 @@ video {
     text-shadow: 0 0 3px red, 0 0 5px #7DF9FF, 0 0 7px #7DF9FF, 0 0 10px red;
     transition: all 0.1s ease;
 }
+
 #top-tracks-playlist:active {
-     /* Styling for the active (clicked) state */
-    transform: translateY(0.5vw); /* Move the button down */
+    /* Styling for the active (clicked) state */
+    transform: translateY(0.5vw);
+    /* Move the button down */
 }
+
 #top-tracks-playlist:hover {
     background-color: rgb(38, 61, 177);
 }
+
 #top-tracks-playlist.selected {
     background-color: rgb(38, 61, 177);
 }
 
 /* SLIDER section */
 label[for="retro-slider"] {
-    color: white; /* Change the text color to a darker shade */
-    font-size: 1.2vw; /* Increase the font size */
+    color: white;
+    /* Change the text color to a darker shade */
+    font-size: 1.2vw;
+    /* Increase the font size */
     font-family: 'NeonFont', sans-serif;
-    margin-bottom: 1vw; /* Add some spacing below the label */
+    margin-bottom: 1vw;
+    /* Add some spacing below the label */
 }
 
 .retro-slider {
     background: transparent;
     border: 2px solid #7DF9FF;
     width: 100%;
-  }
-  
+}
+
 .retro-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 24px;
     height: 24px;
-    background: rgb(66, 66, 254); /* Custom color for the slider thumb */
-    border: 3px solid  rgb(255, 97, 97);
+    background: rgb(66, 66, 254);
+    /* Custom color for the slider thumb */
+    border: 3px solid rgb(255, 97, 97);
     border-radius: 50%;
     cursor: pointer;
 }
-  
+
 .retro-slider::-moz-range-thumb {
     width: 24px;
     height: 24px;
-    background:  rgb(66, 66, 254); /* Custom color for the slider thumb */
+    background: rgb(66, 66, 254);
+    /* Custom color for the slider thumb */
     border: 3px solid rgb(255, 97, 97);
     border-radius: 50%;
     cursor: pointer;
@@ -493,7 +597,7 @@ label[for="retro-slider"] {
 .retro-slider::-moz-range-thumb:hover {
     background: rgb(77, 112, 218);
 }
-  
+
 #slider-value {
     display: inline-block;
     margin-left: 10px;
@@ -509,7 +613,7 @@ label[for="retro-slider"] {
 /* for displaying the tracks on the screen */
 .track-container {
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -519,6 +623,7 @@ label[for="retro-slider"] {
     z-index: 10000;
     /* blur the background image only and the not the contained elements */
 }
+
 .track-container::before {
     content: '';
     position: absolute;
@@ -527,10 +632,12 @@ label[for="retro-slider"] {
     right: 0;
     bottom: 0;
     background-image: inherit;
-    filter: blur(5px); /* Adjust the blur amount as needed */
+    filter: blur(5px);
+    /* Adjust the blur amount as needed */
     z-index: -1;
-    backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
-  }
+    backdrop-filter: blur(5px);
+    /* Adjust the blur amount as needed */
+}
 
 .artist-div {
     position: absolute;
@@ -559,8 +666,9 @@ label[for="retro-slider"] {
     z-index: 10001;
     opacity: 0;
 }
+
 .track-div img {
-    border-image: url('//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/frame.png') 93 92 87 92 stretch stretch; 
+    border-image: url('//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/frame.png') 93 92 87 92 stretch stretch;
     border-color: #f4be52;
     border-style: inset;
     border-width: 20px;
@@ -569,6 +677,7 @@ label[for="retro-slider"] {
     height: auto;
     background-color: #ffe;
 }
+
 .track-div h1 {
     font-family: 'Pacifico', 'NeonFont', sans-serif;
     font-size: 2.5vw;
@@ -577,6 +686,7 @@ label[for="retro-slider"] {
     text-shadow: 0 0 3px red, 0 0 5px #7DF9FF, 0 0 7px #7DF9FF, 0 0 10px red;
 
 }
+
 .track-div p {
     font-family: 'NeonFont', sans-serif;
     font-size: 1.4vw;
@@ -585,15 +695,17 @@ label[for="retro-slider"] {
     text-shadow: 0 0 3px red, 0 0 5px #7DF9FF, 0 0 7px #7DF9FF, 0 0 10px red;
 
 }
+
 /* for displaying the artists on the screen */
 .artist-container {
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 10000;
 }
+
 .now-div {
     position: absolute;
     top: 0;
@@ -607,6 +719,7 @@ label[for="retro-slider"] {
     align-items: center;
     opacity: 0;
 }
+
 .now-div p {
     font-family: 'NeonFont', sans-serif;
     font-size: 1.4vw;
@@ -615,17 +728,19 @@ label[for="retro-slider"] {
     text-align: center;
     text-shadow: 0 0 3px red, 0 0 5px #7DF9FF, 0 0 7px #7DF9FF, 0 0 10px red;
 }
+
 /* for displaying the genres on the screen */
 .genre-container {
     position: absolute;
     background-color: #282a35;
-    top: 0; 
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
     z-index: 10001;
 }
+
 .genre-div {
     position: absolute;
     top: 100%;
@@ -636,11 +751,13 @@ label[for="retro-slider"] {
     align-items: center;
     animation: credits-scroll 15s linear infinite;
 }
-.genre-div p{
+
+.genre-div p {
     font-family: 'NeonFont', sans-serif;
     font-size: 2.5vw;
     color: white;
 }
+
 .genre-div h1 {
     font-family: 'Pacifico', 'NeonFont', sans-serif;
     font-size: 3vw;
@@ -648,15 +765,18 @@ label[for="retro-slider"] {
     text-align: center;
     text-shadow: 0 0 3px red, 0 0 5px #7DF9FF, 0 0 7px #7DF9FF, 0 0 10px red;
 }
+
 /* an animation to screen-roll the genre-div into the view of the genre-container from the bottom to far above*/
 @keyframes credits-scroll {
     0% {
-      top: 100%;
+        top: 100%;
     }
+
     100% {
-      top: -350%;
+        top: -350%;
     }
-  }
+}
+
 /* TV Static Animation Layers */
 
 .static-top {
@@ -665,50 +785,61 @@ label[for="retro-slider"] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        transparent 0,
-        transparent 1px, /* Adjust line thickness */
-        #fff 1px, /* Adjust line color */
-        #fff 2px /* Adjust space between lines */
-      );
+    background: repeating-linear-gradient(transparent 0,
+            transparent 1px,
+            /* Adjust line thickness */
+            #fff 1px,
+            /* Adjust line color */
+            #fff 2px
+            /* Adjust space between lines */
+        );
     animation: static-animation-top 5s linear infinite;
     opacity: 0.25;
     z-index: 10002;
     display: none;
-  }
+}
+
 .static-bottom {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height:100%;
+    height: 100%;
     background: linear-gradient(transparent 60%, #fff 60%, transparent 100%);
     background-size: 100% 40px;
     animation: static-animation-bottom 15s linear infinite;
     opacity: 0.25;
     z-index: 10002;
     display: none;
-  }
+}
+
 @keyframes static-animation-top {
     0% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
+
     100% {
-      transform: translateY(-100%);
+        transform: translateY(-100%);
     }
-  }
+}
+
 @keyframes static-animation-bottom {
-    0%, 100% {
-      transform: translateY(0);
+
+    0%,
+    100% {
+        transform: translateY(0);
     }
-    25%, 75% {
-      transform: translateY(100%);
+
+    25%,
+    75% {
+        transform: translateY(100%);
     }
+
     50% {
-      transform: translateY(-100%);
+        transform: translateY(-100%);
     }
-  }
+}
 
 /* Nostalgic Filter */
 .nostalgic-filter {
@@ -718,25 +849,29 @@ label[for="retro-slider"] {
     width: 100%;
     height: 100%;
     filter: sepia(0.5) hue-rotate(90deg) saturate(1.5) contrast(0.8) brightness(1.2);
-    background: linear-gradient(
-      rgba(243, 223, 186, 0.3) 0%,
-      rgba(243, 223, 186, 0.6) 50%,
-      rgba(243, 223, 186, 0.3) 100%
-    ), 
-    url('../images/vintage_filter.jpg'); /* Replace with your nostalgic overlay image */
+    background: linear-gradient(rgba(243, 223, 186, 0.3) 0%,
+            rgba(243, 223, 186, 0.6) 50%,
+            rgba(243, 223, 186, 0.3) 100%),
+        url('../images/vintage_filter.jpg');
+    /* Replace with your nostalgic overlay image */
     background-blend-mode: multiply;
     animation: flicker 1ms ease infinite;
     z-index: 10003;
     display: none;
-  }
-  @keyframes flicker {
-    0%, 100% {
-      opacity: 0.4;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 0.4;
     }
+
     50% {
-      opacity: 0.3;
+        opacity: 0.3;
     }
-  }
+}
+
 /* old-film filter */
 .old-filter {
     position: absolute;
@@ -754,37 +889,46 @@ label[for="retro-slider"] {
 
 /* Small screens (mobile) */
 @media (max-width: 600px) {
+
     /* Adjust styles for small screens */
     .navbar-fixed .navbar-brand {
         font-size: 16px;
     }
+
     .navbar-fixed .navbar-nav .nav-link {
         font-size: 12px;
     }
+
     .welcome-text {
         font-size: 12px;
     }
+
     .footer {
         width: 80%;
         font-size: 10px;
     }
+
     .social-icons a {
         margin: 0 5px;
         font-size: 16px;
     }
+
     .icon-img {
         width: 18px;
         height: 18px;
     }
+
     video {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+
     /* main page text */
     .main-text p {
         font-size: 12px;
     }
+
     .tv-screen {
         top: 7%;
         left: 50%;
@@ -792,18 +936,23 @@ label[for="retro-slider"] {
         width: 90%;
         padding-top: 60%;
     }
+
     .track-div img {
         width: 45%;
     }
+
     .track-div h1 {
         font-size: 4vw;
     }
+
     .track-div p {
         font-size: 3vw;
     }
+
     .now-div p {
-        font-size: 3vw; 
+        font-size: 3vw;
     }
+
     /* BUTTON CONTROLLER section */
     .button-container {
         bottom: 10%;
@@ -812,29 +961,37 @@ label[for="retro-slider"] {
         height: 45%;
         transform: translateX(-50%);
     }
+
     .button-title {
         font-size: 7vw;
     }
+
     .custom-button {
         font-size: 3vw;
     }
+
     label[for="retro-slider"] {
         font-size: 3vw;
     }
+
     #slider-value {
         font-size: 3vw;
     }
+
     .close {
         top: 10px;
         left: 10px;
         font-size: 5vw;
     }
-    .genre-div p{
+
+    .genre-div p {
         font-size: 5vw;
     }
+
     .genre-div h1 {
         font-size: 6vw;
     }
+
     /* CONTROLLER BUTTONS section <yeah ik lol>*/
     .controller-section {
         bottom: 10%;
@@ -844,26 +1001,33 @@ label[for="retro-slider"] {
         width: 90%;
         height: 45%;
         transform: translateX(-50%);
-    }   
+    }
+
     .controller-button {
         font-size: 3vw;
         height: 7vw;
         width: 7vw;
         border-radius: 50%;
     }
+
     .controller-button.selected {
-        transform: translateY(1vw); /* Move the button down */
-    
+        transform: translateY(1vw);
+        /* Move the button down */
+
     }
-    .top-half > p {
+
+    .top-half>p {
         font-size: 3vw;
     }
+
     #genre-recommend-playlist {
         font-size: 4vw;
     }
+
     #top-tracks-playlist {
         font-size: 4vw;
     }
+
     #return {
         font-size: 4vw;
         bottom: 3%;
@@ -874,11 +1038,7 @@ label[for="retro-slider"] {
 }
 
 /* Medium screens (tablets) */
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
+@media (min-width: 768px) and (max-width: 991px) {}
 
 /* Large screens (desktop) */
-@media (min-width: 992px) {
-
-}
+@media (min-width: 992px) {}

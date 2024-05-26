@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const video_dyn = document.getElementById('background-video');
+    const loadingScreen = document.getElementById('loading-screen');
 
     // Preload videos
     const mobileVideoSrc = 'static/videos/Background_Animation_mobile.mp4';
@@ -8,23 +9,25 @@ document.addEventListener('DOMContentLoaded', function() {
     let mobileVideoBlob, defaultVideoBlob;
 
     function fetchVideo(url) {
-      return fetch(url).then(response => response.blob());
+        return fetch(url).then(response => response.blob());
     }
 
     async function preloadVideos() {
-      [mobileVideoBlob, defaultVideoBlob] = await Promise.all([
-        fetchVideo(mobileVideoSrc),
-        fetchVideo(defaultVideoSrc)
-      ]);
+        [mobileVideoBlob, defaultVideoBlob] = await Promise.all([
+            fetchVideo(mobileVideoSrc),
+            fetchVideo(defaultVideoSrc)
+        ]);
 
-      // Initial video setup
-      setVideoSource();
+        // Initial video setup
+        setVideoSource();
+        // Hide the loading screen after videos are preloaded
+        loadingScreen.style.display = 'none';
     }
 
     function setVideoSource() {
-      const videoBlob = window.innerWidth <= 650 ? mobileVideoBlob : defaultVideoBlob;
-      const objectURL = URL.createObjectURL(videoBlob);
-      video_dyn.src = objectURL;
+        const videoBlob = window.innerWidth <= 650 ? mobileVideoBlob : defaultVideoBlob;
+        const objectURL = URL.createObjectURL(videoBlob);
+        video_dyn.src = objectURL;
     }
 
     // Sets the initial video source
@@ -35,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Adds an event listener to restart the video when it ends
     video_dyn.addEventListener('ended', function () {
-      if (video_dyn.muted !== false) {
-        video_dyn.currentTime = 0;
-        video_dyn.play();
-      }
+        if (video_dyn.muted !== false) {
+            video_dyn.currentTime = 0;
+            video_dyn.play();
+        }
     });
-  });
+});
