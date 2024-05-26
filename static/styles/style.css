@@ -489,7 +489,8 @@ video {
 
 .controller-button.selected {
     background-color: rgb(38, 61, 177);
-    transform: translateY(0.3vw);
+    width: 2.5vw;
+    height: 2.5vw;
     /* Move the button down */
 
 }
