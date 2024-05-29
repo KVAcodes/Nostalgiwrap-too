@@ -32,6 +32,23 @@ export function typeWriter(text, elementClass, speed) {
       });
 }
 
+// a typeWriter function to display the text in the modal, but it doesnt have it appear immediately when the user clicks anywhere
+export function typeWriterModal(text, elementClass, speed) {
+    const textElement = document.querySelector(elementClass);
+    let i = 0;
+    
+    function type() {
+        if (i < text.length) {
+            textElement.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type(); // Start the typing effect
+}
+
+
+
 // JavaScript to control the modal
 const openModalButton = document.getElementById("openModalButton");
 const closeModalButton = document.getElementById("closeModalButton");
@@ -92,7 +109,6 @@ function playVideoWithSound() {
     applyBlur(); // Call this function to apply a blur filter to the video
     backgroundVideo.volume = 0.5; // You can adjust the volume as needed  
     backgroundVideo.muted = false;
-    backgroundVideo.play();
 
     // Open the modal after the video finishes (you can adjust the time accordingly)
     setTimeout(() => {
@@ -102,16 +118,19 @@ function playVideoWithSound() {
             document.getElementById("on-arrival").style.display = "none";
         }
         , 5000);
-    }, backgroundVideo.duration * 150);
+    }, backgroundVideo.duration * 100);
 }
+
+// EVENT LISTENERS
+
+// engages the thrusters
 openModalButton.addEventListener("click", playVideoWithSound);
 
 // Function to close the modal
 closeModalButton.addEventListener("click", () => {
     reset(); // Call the reset function to reset the display
     modal.style.display = "none";
-    removeBlur(); // Call this function to remove the blur filter
-    backgroundVideo.play();
+    //maybe add removeBlur function
     backgroundVideo.muted = true;
     backgroundVideo.playbackRate = 1;
     backgroundVideo.currentTime = 0;
@@ -122,8 +141,7 @@ window.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         reset(); // Call the reset function to reset the display
         modal.style.display = "none";
-        removeBlur(); // Call this function to remove the blur filter
-        backgroundVideo.play();
+        // maybe add removeBlur function
         backgroundVideo.muted = true;
         backgroundVideo.playbackRate = 1;
         backgroundVideo.currentTime = 0;

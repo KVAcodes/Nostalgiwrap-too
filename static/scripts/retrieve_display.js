@@ -1,4 +1,4 @@
-import { typeWriter } from './main_page.js';
+import { typeWriterModal } from './main_page.js';
 
 // global variable to store the value of the shouldStop variable terminating the display function
 let shouldStop = false;
@@ -606,7 +606,7 @@ function displayArtist(index) {
     }, 1000);
     // use the typeWriter function to type out the "Now Playing: {{ the track-name attribute of the artist container}} by {{ the data-name attribute of the artist container}}" on the nowDiv paragraph element and then 2s seconds after it's over fade out the nowDiv and fade in the track-div
     if (shouldStop) return;
-    typeWriter(`Now Playing: ${artists[index].topDiv.getAttribute('track-name')} by ${artists[index].topDiv.getAttribute('data-name')}`, '.now-div p', 100);
+    typeWriterModal(`Now Playing: ${artists[index].topDiv.getAttribute('track-name')} by ${artists[index].topDiv.getAttribute('data-name')}`, '.now-div p', 100);
     setTimeout(() => {
         if (shouldStop) return;
         nowDiv.style.transition = 'all 1s ease-in-out';

@@ -20,8 +20,8 @@ TOKEN_INFO = 'token_info'
 CORS(app)
 
 # Spotify API credentials
-CLIENT_ID = '27c78243b6244d80ba874629179222a4'
-CLIENT_SECRET = '2b1ed529568b431fac006ce480003b7f'
+CLIENT_ID = 'd65b982fb2f54d3fbf7228fe6c8cc58f'
+CLIENT_SECRET = '0382c463df814d36b3856e9529b590fb'
 
 # Spotify API scopes
 SCOPE = 'user-read-currently-playing user-read-playback-state user-modify-playback-state user-top-read playlist-modify-private playlist-modify-public playlist-read-private playlist-read-collaborative playlist-read-private'
@@ -82,9 +82,9 @@ def main():
     """
     try:
         token_info = get_token()
+        sp = spotipy.Spotify(auth=token_info['access_token'])
     except:
         return redirect(url_for('login'))
-    sp = spotipy.Spotify(auth=token_info['access_token'])
     user = sp.current_user()
     name = user['display_name']
     if name is None:
@@ -170,6 +170,12 @@ def create_recommendation_playlist():
     if playlist:
         return jsonify({'message': 'Playlist created successfully!'}), 200
 
+
+@app.route('/logout')
+def logout():
+    """Logs the user out by clearing the session and redirecting to the login page."""
+    session.clear()
+    return redirect(url_for('login_page'))
 
 def get_token():
     """ Returns the user's access token from the session cookie if it exists.
