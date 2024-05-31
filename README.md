@@ -11,7 +11,7 @@ NostalgiWrap is a web application that recaps your top tracks, artists, and genr
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript, React
+- **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Flask (Python)
 - **Styling**: Bootstrap
 
@@ -19,7 +19,7 @@ NostalgiWrap is a web application that recaps your top tracks, artists, and genr
 
 ### Prerequisites
 
-- Node.js and npm
+- Node.js
 - Python 3.x
 - Spotify Developer Account
 
@@ -28,8 +28,8 @@ NostalgiWrap is a web application that recaps your top tracks, artists, and genr
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/nostalgiwrap.git
-    cd nostalgiwrap
+    git clone https://github.com/yourusername/Nostalgiwrap-too.git
+    cd Nostalgiwrap-too
     ```
 
 2. Install backend dependencies:
@@ -61,16 +61,9 @@ NostalgiWrap is a web application that recaps your top tracks, artists, and genr
 2. Run the backend server:
 
     ```bash
-    cd app
-    flask run
+    python3 -m run
     ```
 
-3. Run the frontend build:
-
-    ```bash
-    cd assets
-    npm run build
-    ```
 
 ### Usage
 
@@ -83,31 +76,23 @@ NostalgiWrap is a web application that recaps your top tracks, artists, and genr
 ## Project Structure
 
 ```plaintext
-nostalgiwrap/
+Nostalgiwrap-too/
 ├── AUTHORS
 ├── Procfile
 ├── README.md
-├── app/
-│   ├── __pycache__/
-│   ├── asset.py
-│   ├── run.py
-│   ├── static/
-│   │   ├── dist/
-│   │   ├── images/
-│   │   ├── scripts/
-│   │   └── videos/
-│   └── templates/
-├── assets/
-│   ├── node_modules/
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── src/
-│   │   ├── fonts/
-│   │   ├── images/
-│   │   ├── index.js
-│   │   ├── styles/
-│   │   └── video.js
-│   └── webpack.config.js
 ├── filestructure.txt
 ├── requirements.txt
-└── venv/
+├── run.py
+├── static
+│   ├── fonts
+│   ├── images
+│   ├── scripts
+│   └── videos
+├── templates
+│   ├── about.html
+│   ├── base.html
+│   ├── login_page.html
+│   ├── main_page.html
+│   ├── policy.html
+│   └── privacy.html
+└── venv
