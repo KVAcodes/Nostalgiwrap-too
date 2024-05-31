@@ -35,20 +35,21 @@ NostalgiWrap is a web application that recaps your top tracks, artists, and genr
 2. Install backend dependencies:
 
     ```bash
-    cd backend
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     pip install -r requirements.txt
     ```
 
 3. Install frontend dependencies:
 
     ```bash
-    cd frontend
+    cd assets
     npm install
     ```
 
 ### Setup
 
-1. Create a `.env` file in the `backend` directory with the following content:
+1. Create a `.env` file in the `app` directory with the following content:
 
     ```env
     SPOTIFY_CLIENT_ID=your_spotify_client_id
@@ -60,20 +61,20 @@ NostalgiWrap is a web application that recaps your top tracks, artists, and genr
 2. Run the backend server:
 
     ```bash
-    cd backend
+    cd app
     flask run
     ```
 
-3. Run the frontend development server:
+3. Run the frontend build:
 
     ```bash
-    cd frontend
-    npm start
+    cd assets
+    npm run build
     ```
 
 ### Usage
 
-- Open your browser and navigate to `http://localhost:3000`.
+- Open your browser and navigate to `http://localhost:5000`.
 - Login with your Spotify account.
 - Select the time range (4 weeks, 6 months, all time) to view your top tracks, artists, and genres.
 - Click on "Save as Playlist" to create a playlist of your top tracks.
@@ -82,20 +83,30 @@ NostalgiWrap is a web application that recaps your top tracks, artists, and genr
 
 ```plaintext
 nostalgiwrap/
-│
-├── backend/                 # Flask backend
-│   ├── app.py               # Main application file
-│   ├── requirements.txt     # Backend dependencies
-│   └── .env                 # Environment variables
-│
-├── frontend/                # React frontend
+├── AUTHORS
+├── Procfile
+├── README.md
+├── app/
+│   ├── __pycache__/
+│   ├── asset.py
+│   ├── run.py
+│   ├── static/
+│   │   ├── dist/
+│   │   ├── images/
+│   │   ├── scripts/
+│   │   └── videos/
+│   └── templates/
+├── assets/
+│   ├── node_modules/
+│   ├── package-lock.json
+│   ├── package.json
 │   ├── src/
-│   │   ├── components/      # React components
-│   │   ├── App.js           # Main app component
-│   │   ├── index.js         # Entry point
-│   │   └── ...              # Other files
-│   ├── public/
-│   ├── package.json         # Frontend dependencies
-│   └── ...                  # Other configuration files
-│
-└── README.md                # This file
+│   │   ├── fonts/
+│   │   ├── images/
+│   │   ├── index.js
+│   │   ├── styles/
+│   │   └── video.js
+│   └── webpack.config.js
+├── filestructure.txt
+├── requirements.txt
+└── venv/
