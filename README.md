@@ -74,7 +74,7 @@ NostalgiWrap is a web application that recaps your top tracks, artists, and genr
 
 ### Usage
 
-- deployed at [Nostalgiwrap](nostalgiwrap-cce5d36cb37f.herokuapp.com)
+- deployed at (nostalgiwrap-cce5d36cb37f.herokuapp.com)
 - Open your browser and navigate to `http://localhost:5000`.
 - Login with your Spotify account.
 - Select the time range (4 weeks, 6 months, all time) to view your top tracks, artists, and genres.
